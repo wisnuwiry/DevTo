@@ -1,3 +1,8 @@
+ignore:
+  - "**/*g.dart"
+  - "**/*gr.dart"
+  - "**/*freezed.dart"
+  
 coverage:
   status:
     project:
