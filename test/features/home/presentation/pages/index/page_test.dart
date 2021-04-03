@@ -8,7 +8,7 @@ void main() {
   group('HomePage', () {
     testWidgets('renders HomePageView', (tester) async {
       await tester.pumpApp(const HomePage());
-      expect(find.byType(Text), findsOneWidget);
+      expect(find.byType(Scaffold), findsOneWidget);
     });
   });
 }
