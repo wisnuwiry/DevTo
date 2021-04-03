@@ -1,7 +1,15 @@
-# Dev To
+# Dev.To Multiplatform
 
-![coverage][coverage_badge]
+<p align="center">
+<img src="https://i.ibb.co/12zvh6K/logo-flutter-1080px-clr.png" height="150" alt="Flutter Logo" style="margin-right: 50px"/>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png" height="150" alt="Dev.to Logo" />
+</p>
+</br>
+
+[![dev_to](https://github.com/wisnuwiry/DevTo/actions/workflows/main.yaml/badge.svg)](https://github.com/wisnuwiry/DevTo/actions/workflows/main.yaml)
+[![Codecov](https://codecov.io/gh/wisnuwiry/DevTo/branch/master/graph/badge.svg)](https://codecov.io/gh/wisnuwiry/DevTo)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
+[![Bloc Library](https://tinyurl.com/bloc-library)](https://github.com/felangel/bloc)
 [![License: MIT][license_badge]][license_link]
 
 ---
