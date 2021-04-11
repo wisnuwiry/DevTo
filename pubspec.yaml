@@ -30,6 +30,7 @@ dev_dependencies:
   very_good_analysis: ^2.0.0
   mocktail_image_network: ^0.1.0
 
+
 flutter:
   uses-material-design: true
   generate: true

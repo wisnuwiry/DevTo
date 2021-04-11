@@ -17,9 +17,6 @@ class _HomePageState extends State<HomePage> {
       case LayoutBreakpoint.xs:
         return MobileView();
       case LayoutBreakpoint.sm:
-        if (context.layout.size.width <= 720.0) {
-          return MobileView();
-        }
         return TabletView();
       default:
         return DesktopView();

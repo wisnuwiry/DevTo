@@ -25,4 +25,44 @@ void main() {
     expect(find.byIcon(AppIcons.instagram), findsOneWidget);
     expect(find.byIcon(AppIcons.twitch), findsOneWidget);
   });
+
+  testWidgets('Tap Item Menu Twitter', (tester) async {
+    // arrange
+    await tester.pumpApp(Scaffold(body: SocialAccountSection()));
+
+    await tester.tap(find.byKey(const Key('button_social_media_twitter')));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('Tap Item Menu Facebook', (tester) async {
+    // arrange
+    await tester.pumpApp(Scaffold(body: SocialAccountSection()));
+
+    await tester.tap(find.byKey(const Key('button_social_media_facebook')));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('Tap Item Menu Github', (tester) async {
+    // arrange
+    await tester.pumpApp(Scaffold(body: SocialAccountSection()));
+
+    await tester.tap(find.byKey(const Key('button_social_media_github')));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('Tap Item Menu Instagram', (tester) async {
+    // arrange
+    await tester.pumpApp(Scaffold(body: SocialAccountSection()));
+
+    await tester.tap(find.byKey(const Key('button_social_media_instagram')));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('Tap Item Menu Twitch', (tester) async {
+    // arrange
+    await tester.pumpApp(Scaffold(body: SocialAccountSection()));
+
+    await tester.tap(find.byKey(const Key('button_social_media_twitch')));
+    await tester.pumpAndSettle();
+  });
 }

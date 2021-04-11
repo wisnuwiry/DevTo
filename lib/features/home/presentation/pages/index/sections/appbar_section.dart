@@ -1,4 +1,5 @@
 import 'package:dev_to/core/core.dart';
+import 'package:dev_to/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 
@@ -19,11 +20,13 @@ class AppBarSection extends AppBar {
         );
 
   static Widget _buildTitleMobile(BuildContext context) {
-    return Image.asset(
-      Assets.imgLogo,
-      color: Theme.of(context).appBarTheme.actionsIconTheme?.color,
-      height: 40,
-      key: const Key('img_logo_appbar'),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxHeight: 30),
+      child: Image.asset(
+        Assets.imgLogo,
+        color: Theme.of(context).appBarTheme.actionsIconTheme?.color,
+        key: const Key('img_logo_appbar'),
+      ),
     );
   }
 
@@ -35,6 +38,7 @@ class AppBarSection extends AppBar {
           child: Image.asset(
             Assets.imgLogo,
             color: Theme.of(context).appBarTheme.actionsIconTheme?.color,
+            key: const Key('img_logo_appbar'),
           ),
         ),
         const SizedBox(width: 16),
@@ -44,9 +48,9 @@ class AppBarSection extends AppBar {
             maxWidth: context.layout.maxWidth - 200,
           ),
           child: TextFormField(
-            decoration: const InputDecoration(
-              prefixIcon: Icon(AppIcons.search),
-              hintText: 'Search',
+            decoration: InputDecoration(
+              prefixIcon: const Icon(AppIcons.search),
+              hintText: AppLocalizations.of(context)?.search,
             ),
           ),
         ),
@@ -59,34 +63,14 @@ class AppBarSection extends AppBar {
       SizedBox(
         width: 40,
         child: IconButton(
+          key: const Key('button_action_appbar_search_icon'),
           padding: const EdgeInsets.all(8),
           icon: const Icon(AppIcons.search),
+          tooltip: AppLocalizations.of(context)?.search,
           onPressed: () {},
         ),
       ),
-      SizedBox(
-        width: 40,
-        child: IconButton(
-            padding: const EdgeInsets.all(8),
-            icon: const Icon(AppIcons.connect),
-            onPressed: () {}),
-      ),
-      SizedBox(
-        width: 40,
-        child: IconButton(
-            padding: const EdgeInsets.all(8),
-            icon: const Icon(AppIcons.notification),
-            onPressed: () {}),
-      ),
-      IconButton(
-        onPressed: () {},
-        icon: CircleAvatar(
-          radius: 16,
-          backgroundColor: Theme.of(context).disabledColor,
-          backgroundImage: const NetworkImage(
-              'https://avatars.githubusercontent.com/u/44025097?s=60&v=4'),
-        ),
-      ),
+      _buildCommonActions(context),
     ];
   }
 
@@ -95,23 +79,48 @@ class AppBarSection extends AppBar {
       Container(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: ElevatedButton(
+          key: const Key('button_action_appbar_write_post'),
           onPressed: () {},
-          child: const Text('Write Post'),
+          child: Text(AppLocalizations.of(context)!.writePost),
         ),
       ),
       const SizedBox(width: 8),
-      IconButton(icon: const Icon(AppIcons.connect), onPressed: () {}),
-      IconButton(icon: const Icon(AppIcons.notification), onPressed: () {}),
-      IconButton(
-        onPressed: () {},
-        icon: CircleAvatar(
-          radius: 16,
-          backgroundColor: Theme.of(context).disabledColor,
-          backgroundImage: const NetworkImage(
-              'https://avatars.githubusercontent.com/u/44025097?s=60'),
-        ),
-      ),
+      _buildCommonActions(context),
     ];
+  }
+
+  static Widget _buildCommonActions(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 40,
+          child: IconButton(
+              key: const Key('button_action_appbar_connect'),
+              padding: const EdgeInsets.all(8),
+              icon: const Icon(AppIcons.connect),
+              onPressed: () {}),
+        ),
+        SizedBox(
+          width: 40,
+          child: IconButton(
+              key: const Key('button_action_appbar_notification'),
+              padding: const EdgeInsets.all(8),
+              icon: const Icon(AppIcons.notification),
+              onPressed: () {}),
+        ),
+        IconButton(
+          key: const Key('button_action_appbar_avatar'),
+          onPressed: () {},
+          icon: CircleAvatar(
+            radius: 16,
+            backgroundColor: Theme.of(context).disabledColor,
+            backgroundImage: const NetworkImage(
+                'https://avatars.githubusercontent.com/u/44025097?s=60&v=4'),
+          ),
+        ),
+      ],
+    );
   }
 
   final BuildContext context;

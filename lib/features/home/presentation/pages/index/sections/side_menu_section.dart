@@ -1,3 +1,4 @@
+import 'package:dev_to/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SideMenuSection extends StatefulWidget {
@@ -21,14 +22,6 @@ class _SideMenuSectionState extends State<SideMenuSection> {
   }
 
   @override
-  void didUpdateWidget(covariant SideMenuSection oldWidget) {
-    if (oldWidget.autoCollapse != widget.autoCollapse) {
-      _currentCollapse = widget.autoCollapse ?? false;
-    }
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -45,7 +38,6 @@ class _SideMenuSectionState extends State<SideMenuSection> {
                 child: Text(_mockMenuData[index]),
               ),
               onTap: () {},
-              onHover: (v) {},
             );
           },
           itemCount: _currentCollapse ? 6 : _mockMenuData.length,
@@ -62,7 +54,8 @@ class _SideMenuSectionState extends State<SideMenuSection> {
                 vertical: 16.0,
                 horizontal: 8.0,
               ),
-              child: const Text('• • •  More..'),
+              child: Text('• • •  '
+                  '${AppLocalizations.of(context)!.more}..'),
             ),
             onTap: () {
               setState(() {

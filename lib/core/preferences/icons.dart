@@ -1,8 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 class AppIcons {
-  AppIcons._();
-
   static const _kFontFam = 'AppIcons';
 
   static const IconData moreHorizontal =

@@ -24,6 +24,7 @@ void main() {
 
     // actual
     final menus = find.byType(InkWell);
+    await tester.tap(menus);
 
     // assert
     // Default is [6] because more menu is same widget
