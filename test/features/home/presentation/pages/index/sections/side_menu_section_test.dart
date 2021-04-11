@@ -23,8 +23,11 @@ void main() {
     );
 
     // actual
+    await tester.pumpAndSettle();
     final menus = find.byType(InkWell);
-    await tester.tap(menus);
+    for (var i = 0; i < 6; i++) {
+      await tester.tap(menus.at(i));
+    }
 
     // assert
     // Default is [6] because more menu is same widget
