@@ -7,7 +7,7 @@
 </br>
 
 [![dev_to](https://github.com/wisnuwiry/DevTo/actions/workflows/main.yaml/badge.svg)](https://github.com/wisnuwiry/DevTo/actions/workflows/main.yaml)
-[![Codecov](https://codecov.io/gh/wisnuwiry/DevTo/branch/master/graph/badge.svg)](https://codecov.io/gh/wisnuwiry/DevTo)
+[![codecov](https://codecov.io/gh/wisnuwiry/DevTo/branch/main/graph/badge.svg?token=gqMAPoTjIr)](https://codecov.io/gh/wisnuwiry/DevTo)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![Bloc Library](https://tinyurl.com/bloc-library)](https://github.com/felangel/bloc)
 [![License: MIT][license_badge]][license_link]

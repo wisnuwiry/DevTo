@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
+
+import 'view/view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage();
@@ -10,13 +13,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Body View'),
-      ),
-    );
+    switch (context.breakpoint) {
+      case LayoutBreakpoint.xs:
+        return MobileView();
+      case LayoutBreakpoint.sm:
+        return TabletView();
+      default:
+        return DesktopView();
+    }
   }
 }
